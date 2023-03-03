@@ -11,7 +11,7 @@ public class Calculator implements ActionListener {
     JButton[] functionButtons = new JButton[8];
     JButton addButton,subButton,mulButton,divButton,decButton,equButton,clrButton, delButton;
     JPanel panel;
-
+    
     Font myFont = new Font("Ink Free", Font.BOLD,30);
 
     double num1 = 0, num2 = 0, result = 0;
@@ -19,7 +19,7 @@ public class Calculator implements ActionListener {
 
     public Calculator() {
 
-        frame = new JFrame("My Calculator");
+        frame = new JFrame("Our Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(420, 550);
         frame.setLayout(null);
