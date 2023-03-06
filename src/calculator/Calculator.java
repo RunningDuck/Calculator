@@ -1,3 +1,5 @@
+package calculator;
+
 import javax.swing.*;
 
 import java.awt.*;
@@ -20,7 +22,7 @@ public class Calculator implements ActionListener {
     
     public Calculator() {
         
-        frame = new JFrame("Our Calculator");
+        frame = new JFrame("Our calculator.Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(420, 550);
         frame.setLayout(null);
@@ -98,44 +100,44 @@ public class Calculator implements ActionListener {
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+
         for (int i = 0; i < 10; i++) {
             if (e.getSource() == numberButtons[i]) {
                 textfield.setText(textfield.getText().concat(String.valueOf(i)));
             }
         }
-        
+
         if (e.getSource() == decButton) {
             textfield.setText(textfield.getText().concat("."));
         }
-        
+
         if (e.getSource() == addButton) {
             num1 = Double.valueOf(textfield.getText());
             operator = '+';
             textfield.setText(null);
         }
-        
+
         if (e.getSource() == subButton) {
             num1 = Double.valueOf(textfield.getText());
             operator = '-';
             textfield.setText(null);
         }
-        
+
         if (e.getSource() == mulButton) {
             num1 = Double.valueOf(textfield.getText());
             operator = '*';
             textfield.setText(null);
         }
-        
+
         if (e.getSource() == divButton) {
             num1 = Double.valueOf(textfield.getText());
             operator = '/';
             textfield.setText(null);
         }
-        
+
         if (e.getSource() == equButton) {
             num2 = Double.valueOf(textfield.getText());
-            
+
             switch (operator) {
                 case '+':
                     result = add(num1, num2);
@@ -154,15 +156,16 @@ public class Calculator implements ActionListener {
             }
             textfield.setText(Double.toString(result));
         }
-        
+
         if (e.getSource() == clrButton) {
             textfield.setText(null);
         }
-        
+
         if (e.getSource() == delButton) {
             String str = textfield.getText();
             textfield.setText(str.substring(0, str.length() - 1));
         }
+
         
         
     }
