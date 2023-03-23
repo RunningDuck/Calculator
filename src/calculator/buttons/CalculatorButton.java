@@ -11,5 +11,5 @@ public interface CalculatorButton {
     
     boolean isFromActionEvent(ActionEvent e);
     
-    public JButton getjButton();
+    JButton getjButton();
 }
