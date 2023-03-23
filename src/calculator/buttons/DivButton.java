@@ -3,38 +3,36 @@ package calculator.buttons;
 import calculator.ButtonHost;
 import calculator.ExpressionNode;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.*;
+public class DivButton implements CalculatorButton{
 
-public class AddButton implements CalculatorButton {
-    
     private final JButton jButton;
     private ButtonHost buttonHost;
-    
-    public AddButton(ActionListener actionListener, ButtonHost buttonHost) {
+    private char operator;
+
+    public DivButton(ActionListener actionListener, ButtonHost buttonHost) {
+        jButton = new JButton("/");
         this.buttonHost = buttonHost;
-        jButton = new JButton("+");
         jButton.addActionListener(actionListener);
     }
-    
-    
-    public JButton getjButton() {
-        return jButton;
-    }
-    
-    
+
+
     @Override
     public void performAction() {
-        buttonHost.getCalculator().addOpNode(ExpressionNode.Operator.PLUS);
-        buttonHost.setTextField(ExpressionNode.Operator.PLUS.getText());
+        buttonHost.getCalculator().addOpNode(ExpressionNode.Operator.DIVIDE);
+        buttonHost.setTextField(ExpressionNode.Operator.DIVIDE.getText());
     }
 
     @Override
     public boolean isFromActionEvent(ActionEvent e) {
         return e.getSource() == jButton;
     }
-    
 
+    @Override
+    public JButton getjButton() {
+        return jButton;
+    }
 }
